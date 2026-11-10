@@ -2,6 +2,7 @@ import 'package:emotic/core/routes.dart';
 import 'package:emotic/widgets_common/emotic_logo.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'l10n/app_localizations.dart';
 
 class LeftDrawer extends StatefulWidget {
   const LeftDrawer({super.key});
@@ -13,6 +14,7 @@ class LeftDrawer extends StatefulWidget {
 class _LeftDrawerState extends State<LeftDrawer> {
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Drawer(
       child: ListView(
         children: [
@@ -43,14 +45,14 @@ class _LeftDrawerState extends State<LeftDrawer> {
             },
           ),
           ListTile(
-            title: const Text("Settings"),
+            title: const Text(l10n.settings),
             onTap: () {
               Navigator.of(context).pop();
               context.go(Routes.settingsPage);
             },
           ),
           ListTile(
-            title: const Text("About"),
+            title: const Text(l10n.about),
             onTap: () {
               Navigator.of(context).pop();
               context.go(Routes.aboutPage);
