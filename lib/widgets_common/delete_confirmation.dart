@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'l10n/app_localizations.dart';
 
 Future<bool?> confirmDeletionDialog(
   BuildContext context, {
@@ -7,6 +8,7 @@ Future<bool?> confirmDeletionDialog(
   return showAdaptiveDialog<bool?>(
     context: context,
     builder: (context) {
+       final l10n = AppLocalizations.of(context)!;
       return SimpleDialog(
         title: Text(titleText),
         contentPadding: const EdgeInsets.all(16.0),
@@ -22,7 +24,7 @@ Future<bool?> confirmDeletionDialog(
                   onPressed: () {
                     Navigator.pop(context, false);
                   },
-                  child: const Text("No"),
+                  child: Text(l10n.no),
                 ),
                 const SizedBox(
                   width: 10,
@@ -34,7 +36,7 @@ Future<bool?> confirmDeletionDialog(
                       true,
                     );
                   },
-                  child: const Text("Yes"),
+                  child: Text(l10n.yes),
                 ),
               ],
             );
