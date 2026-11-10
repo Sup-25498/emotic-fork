@@ -9,12 +9,14 @@ import 'package:emotic/widgets_common/show_message.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:emotic/core/open_root_scaffold_drawer.dart';
 import 'package:flutter/material.dart';
+import 'l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return BlocProvider(
       create: (context) => SettingsCubit(
         emoticonsRepository: sl(),
@@ -39,7 +41,7 @@ class SettingsPage extends StatelessWidget {
                       if (context.mounted) {
                         showAlertDialog(
                           context,
-                          title: "Error",
+                          title: Text(l10n.error),
                           content: alertMessage,
                           onPressed: () {},
                         );
@@ -54,7 +56,7 @@ class SettingsPage extends StatelessWidget {
                       return SafeArea(
                         child: Scaffold(
                           appBar: AppBar(
-                            title: const Text("Settings"),
+                            title: Text(l10n.settings),
                             leading: DrawerButton(
                               onPressed: context.openRootScaffoldDrawer,
                             ),
@@ -62,10 +64,10 @@ class SettingsPage extends StatelessWidget {
                           body: ListView(
                             children: [
                               const ListTileHeading(
-                                text: "Manage data",
+                                text: Text(l10n.manage_data),
                               ),
                               ListTile(
-                                title: const Text("Restore all emoticons"),
+                                title: Text(l10n.restore_all),
                                 onTap: () async {
                                   await context
                                       .read<SettingsCubit>()
@@ -73,25 +75,25 @@ class SettingsPage extends StatelessWidget {
                                 },
                               ),
                               ListTile(
-                                title: const Text("Clear all data"),
+                                title: Text(l10n.clear_all),
                                 onTap: () async {
                                   final shouldClear = await showDialog<bool>(
                                     context: context,
                                     builder: (context) => AlertDialog(
-                                      title: const Text("Confirm"),
-                                      content: const Text(
-                                        "Are you sure you want to delete all data?",
+                                      title: Text(l10n.confirm),
+                                      content: Text(
+                                        l10n.clear_all_confirm,
                                       ),
                                       actions: <Widget>[
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(context, false),
-                                          child: const Text('No'),
+                                          child: Text(l10n.no),
                                         ),
                                         TextButton(
                                           onPressed: () =>
                                               Navigator.pop(context, true),
-                                          child: const Text('Yes'),
+                                          child: Text(l10n.yes),
                                         ),
                                       ],
                                     ),
@@ -105,17 +107,17 @@ class SettingsPage extends StatelessWidget {
                               ),
                               const Divider(),
                               const ListTileHeading(
-                                text: "Backup and Restore",
+                                text: Text(l10n.backup_restore),
                               ),
                               ListTile(
-                                title: const Text("Import"),
+                                title: Text(l10n.import),
                                 onTap: () async {
                                   showAlertDialog(
                                     context,
-                                    title: "Import warning",
-                                    content: "This allows importing .sqlite and"
-                                        " .tar.gz files.\nOnly import .tar.gz"
-                                        " files from trusted sources.\n( ⚆ _ ⚆ )",
+                                    title: Text(l10n.import_warning),
+                                    content: Text(l10n.import_warning_content_a)
+                                        Text(l10n.import_warning_content_b)
+                                        Text(l10n.import_warning_content_c),
                                     onPressed: () async {
                                       if (context.mounted) {
                                         await context
@@ -132,7 +134,7 @@ class SettingsPage extends StatelessWidget {
                                 },
                               ),
                               ListTile(
-                                title: const Text("Export"),
+                                title: Text(l10n.export),
                                 onTap: () async {
                                   final exportConfig =
                                       await exportConfirmationDialog(context);
@@ -149,9 +151,9 @@ class SettingsPage extends StatelessWidget {
                                 },
                               ),
                               const Divider(),
-                              const ListTileHeading(text: "Theme & UI"),
+                              const ListTileHeading(text: Text(l10n.theme_ui)),
                               ListTile(
-                                title: Text("Theme mode"),
+                                title: Text(l10n.theme_mode),
                                 trailing: DropdownMenu(
                                   initialSelection: settings.emoticThemeMode,
                                   onSelected: (emoticThemeMode) async {
@@ -166,25 +168,25 @@ class SettingsPage extends StatelessWidget {
                                   dropdownMenuEntries: [
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.system,
-                                      label: "System",
+                                      label: Text(l10n.system),
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.light,
-                                      label: "Light",
+                                      label: Text(l10n.light),
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.dark,
-                                      label: "Dark",
+                                      label: Text(l10n.dark),
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.black,
-                                      label: "Black",
+                                      label: Text(l10n.black),
                                     ),
                                   ],
                                 ),
                               ),
                               ListTile(
-                                title: Text("Emoticon text size"),
+                                title: Text(l10n.emoticon_text_size),
                                 trailing: DropdownMenu(
                                   initialSelection: settings.emoticonsTextSize,
                                   onSelected: (textSize) async {
@@ -208,7 +210,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: "Default",
+                                          label: Text(l10n.default),
                                         );
                                       } else {
                                         return DropdownMenuEntry(
@@ -221,7 +223,7 @@ class SettingsPage extends StatelessWidget {
                                 ),
                               ),
                               ListTile(
-                                title: Text("Emotipics column count"),
+                                title: Text(l10n.emotipics_column_count),
                                 trailing: DropdownMenu(
                                   initialSelection:
                                       settings.emotipicsColumnCount,
@@ -246,7 +248,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: "Auto",
+                                          label: Text(l10n.auto),
                                         );
                                       } else {
                                         return DropdownMenuEntry(
@@ -259,7 +261,7 @@ class SettingsPage extends StatelessWidget {
                                 ),
                               ),
                               ListTile(
-                                title: Text("Fancy text size"),
+                                title: Text(l10n.fancy_text_size),
                                 trailing: DropdownMenu(
                                   initialSelection: settings.fancyTextSize,
                                   onSelected: (textSize) async {
@@ -283,7 +285,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: "Default",
+                                          label: Text(l10n.default),
                                         );
                                       } else {
                                         return DropdownMenuEntry(
