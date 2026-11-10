@@ -2,6 +2,32 @@
   "settings": "Settings",
   "about": "About",
 
+  "manage_data": "Manage data",
+  "restore_all": "Restore all emoticons",
+  "clear_all": "Clear all data",
+  "clear_all_confirm": "Are you sure you want to delete all data?",
+  "backup_restore": "Backup and Restore",
+  "import": "Import",
+  "import_warning": "Import warning",
+  "import_warning_content_a": "This allows importing .sqlite and",
+  "import_warning_content_b": " .tar.gz files.\nOnly import .tar.gz",
+  "import_warning_content_c": " files from trusted sources.\n( ⚆ _ ⚆ )",
+  "export": "Export",
+  "theme_ui": "Theme & UI",
+  "theme_mode": "Theme mode",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark",
+  "black": "Black",
+  "default": "Default",
+  "emoticon_text_size": "Emoticon text size",
+  "emotipics_column_count": "Emotipics column count",
+  "auto": "Auto",
+  "fancy_text_size": "Fancy text size",
+  
+
   "no": "No",
-  "yes": "Yes"
+  "yes": "Yes",
+  "confirm": "Confirm",
+  "error": "Error"
 }
