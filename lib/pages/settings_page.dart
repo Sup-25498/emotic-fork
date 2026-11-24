@@ -9,7 +9,7 @@ import 'package:emotic/widgets_common/show_message.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:emotic/core/open_root_scaffold_drawer.dart';
 import 'package:flutter/material.dart';
-import 'l10n/app_localizations.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -41,7 +41,7 @@ class SettingsPage extends StatelessWidget {
                       if (context.mounted) {
                         showAlertDialog(
                           context,
-                          title: Text(l10n.error),
+                          title: l10n.error,
                           content: alertMessage,
                           onPressed: () {},
                         );
@@ -63,8 +63,8 @@ class SettingsPage extends StatelessWidget {
                           ),
                           body: ListView(
                             children: [
-                              const ListTileHeading(
-                                text: Text(l10n.manage_data),
+                              ListTileHeading(
+                                text: l10n.manage_data,
                               ),
                               ListTile(
                                 title: Text(l10n.restore_all),
@@ -106,18 +106,20 @@ class SettingsPage extends StatelessWidget {
                                 },
                               ),
                               const Divider(),
-                              const ListTileHeading(
-                                text: Text(l10n.backup_restore),
+                              ListTileHeading(
+                                text: l10n.backup_restore,
                               ),
                               ListTile(
                                 title: Text(l10n.import),
                                 onTap: () async {
                                   showAlertDialog(
                                     context,
-                                    title: Text(l10n.import_warning),
-                                    content: Text(l10n.import_warning_content_a)
-                                        Text(l10n.import_warning_content_b)
-                                        Text(l10n.import_warning_content_c),
+                                    title: l10n.import_warning,
+                                    content: [
+                                        l10n.import_warning_content_a,
+                                        l10n.import_warning_content_b,
+                                        l10n.import_warning_content_c,
+                                        ].join('\n\n'),
                                     onPressed: () async {
                                       if (context.mounted) {
                                         await context
@@ -151,7 +153,7 @@ class SettingsPage extends StatelessWidget {
                                 },
                               ),
                               const Divider(),
-                              const ListTileHeading(text: Text(l10n.theme_ui)),
+                              ListTileHeading(text: l10n.theme_ui),
                               ListTile(
                                 title: Text(l10n.theme_mode),
                                 trailing: DropdownMenu(
@@ -168,19 +170,19 @@ class SettingsPage extends StatelessWidget {
                                   dropdownMenuEntries: [
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.system,
-                                      label: Text(l10n.system),
+                                      label: l10n.system,
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.light,
-                                      label: Text(l10n.light),
+                                      label: l10n.light,
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.dark,
-                                      label: Text(l10n.dark),
+                                      label: l10n.dark,
                                     ),
                                     DropdownMenuEntry(
                                       value: EmoticThemeMode.black,
-                                      label: Text(l10n.black),
+                                      label: l10n.black,
                                     ),
                                   ],
                                 ),
@@ -210,7 +212,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: Text(l10n.default_owo),
+                                          label: l10n.default_owo,
                                         );
                                       } else {
                                         return DropdownMenuEntry(
@@ -248,7 +250,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: Text(l10n.auto),
+                                          label: l10n.auto,
                                         );
                                       } else {
                                         return DropdownMenuEntry(
@@ -285,7 +287,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: Text(l10n.default_owo),
+                                          label: l10n.default_owo,
                                         );
                                       } else {
                                         return DropdownMenuEntry(

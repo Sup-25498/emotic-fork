@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'l10n/app_localizations.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 
 Future<bool?> confirmDeletionDialog(
   BuildContext context, {
