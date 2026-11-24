@@ -210,7 +210,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: Text(l10n.default),
+                                          label: Text(l10n.default_owo),
                                         );
                                       } else {
                                         return DropdownMenuEntry(
@@ -285,7 +285,7 @@ class SettingsPage extends StatelessWidget {
                                       if (e == null) {
                                         return DropdownMenuEntry(
                                           value: null,
-                                          label: Text(l10n.default),
+                                          label: Text(l10n.default_owo),
                                         );
                                       } else {
                                         return DropdownMenuEntry(
