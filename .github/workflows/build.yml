@@ -1,8 +1,8 @@
-name: Build and Release
+name: Build Apk
 
 on:
   push:
-    branches: [dev]
+    branches: [test]
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Set up Java
         uses: actions/setup-java@v4
