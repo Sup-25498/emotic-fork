@@ -33,10 +33,10 @@ jobs:
         run: flutter gen-l10n
 
       - name: Build release APK
-        run: flutter build apk --debug --flavor=fdroid
+        run: flutter build apk --profile --flavor=fdroid
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: android-debugRelease-apk
+          name: android-testRelease-apk
           path: build/app/outputs/flutter-apk/*.apk
