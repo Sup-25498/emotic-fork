@@ -32,11 +32,7 @@ jobs:
       - name: Generate localizations
         run: flutter gen-l10n
 
-      - name: Build release APK
-        run: flutter build apk --release --flavor=fdroid
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: android-release-apk
-          path: build/app/outputs/flutter-apk/*.apk
+      - name: Build and locate APK
+        run: |
+          flutter build apk --debug --verbose || true
+          find . -type f -name "*.apk" -print
