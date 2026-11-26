@@ -68,6 +68,9 @@ android {
         debug {
             applicationIdSuffix ".debug"
         }
+        profile {
+            applicationIdSuffix ".nightly"
+        }
     }
 
    flavorDimensions "default"
