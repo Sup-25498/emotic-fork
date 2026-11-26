@@ -2,6 +2,7 @@ import 'package:emotic/core/app_theme.dart';
 import 'package:emotic/core/init_setup.dart';
 import 'package:emotic/core/routes.dart';
 import 'package:emotic/core/settings.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dynamic_color/dynamic_color.dart';
@@ -29,6 +30,8 @@ class EmoticApp extends StatelessWidget {
               return MaterialApp.router(
                 debugShowCheckedModeBanner: false,
                 title: 'Emotic',
+                localizationsDelegates: AppLocalizations.localizationsDelegates,
+                supportedLocales: AppLocalizations.supportedLocales,
                 theme: getAppTheme(
                   colorScheme: lightDynamic,
                   brightness: Brightness.light,
