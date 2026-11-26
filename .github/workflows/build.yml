@@ -2,7 +2,7 @@ name: Build Apk
 
 on:
   push:
-    branches: [test]
+    branches: [xlegacy]
   workflow_dispatch:
 
 jobs:
