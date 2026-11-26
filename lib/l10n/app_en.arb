@@ -2,6 +2,8 @@
   "settings": "Settings",
   "about": "About",
 
+  "@@test": "notes will work?",
+
   "manage_data": "Manage data",
   "restore_all": "Restore all emoticons",
   "clear_all": "Clear all data",
