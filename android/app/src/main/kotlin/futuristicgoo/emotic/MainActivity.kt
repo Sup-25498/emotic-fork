@@ -1,4 +1,4 @@
-package futuristicgoo.emotic
+package sup.emotic
 
 import io.flutter.embedding.android.FlutterActivity
 
