@@ -1,3 +1,4 @@
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 void showSnackBar(BuildContext context, {required String text}) async {
@@ -23,6 +24,7 @@ void showAlertDialog(
   showDialog(
     context: context,
     builder: (context) {
+    final l10n = AppLocalizations.of(context)!;
       return AlertDialog(
         title: Text(title),
         content: Text(content),
@@ -32,7 +34,7 @@ void showAlertDialog(
               Navigator.pop(context);
               onPressed();
             },
-            child: const Text('OK'),
+            child: Text(l10n.ok1),
           ),
         ],
       );
