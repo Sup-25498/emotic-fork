@@ -1,3 +1,189 @@
 {
 
+  "settingUp_updating": "Updating stuff ● . ◉",
+
+  "@@popup_menu": "PopUp Menu",  
+  "add_emoticon": "Add Emoticon",
+  "add_multiple": "Add Multiple",
+  "add_tag": "Add Tag(s)",
+  "zoom": "Zoom",
+  "edit_tag_link": "Edit Tag Link",
+  "reorder": "Reorder",
+
+  "refresh": "Refresh",
+  "add_image": "Add Image(s)",
+  "add_folder": "Add Folder",
+  "hide_image": "Hide image(s)",
+
+
+  "added": "Added",
+
+  "emoticons1": "emoticons",
+  "tags1": "tags",
+
+
+  "tags": "Tags",
+  "@tags": { "description": "btw Tags uses on both emoticon & emotipic sheet editor" },
+  
+
+  "add_new_tags": "Add new tags",
+  "add_new_emoticons": "Add Emoticons",
+
+  "add_hint": "Type one per line",
+  "add_tag_hint": "Type one tag per line",
+  "add_multiple_hint": "One emoticon per line",
+
+
+  "@@actions_button": "Actions Button & Item..",
+  "add": "Add",
+  "edit": "Edit",
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "ok": "Ok",
+  "ok1": "OK",
+  "no": "No",
+  "yes": "Yes",
+  "confirm": "Confirm",
+
+  "@@deletion_confirm": "Delete Confirms",
+  "deleteEmoticon_confirm": "Delete emoticon?",
+  "deleteEmotipic_confirm": "Delete image?",
+
+  "emoticonSelectionDeleteConfirm_b1": " emoticons and ",
+  "emotipicSelectionDeleteConfirm_b1": " images and ",
+  "selectionDeleteConfirm_b2": " tags?",
+
+
+  "emoticons": "Emoticons",
+  "@emoticons": { "description": "The Emoticons" },
+
+  "@@EmoticonSelectionEditor": "emoticonsEditor",
+  "emoticonsEditor_links": "Select an emoticon to modify its tags",
+  "emoticonsEditor_delete": "Select the emoticons and tags you wish to delete",
+  "emoticonsEditor_reorder": "Drag the handle to reorder emoticons or tags",
+
+ 
+  "search_emoticons": "Search by tag",
+
+  "empty_emoticons": "Nothing O.o",
+
+  "copied_emoticon": "Copied ",
+
+  "@@emoticonSheetEditor": "Emoticon OverView & Editor Sheet",
+  "emoticon": "Emoticon",
+  "add_emoticon1": "Add emoticon",
+  "modify_emoticon": "Modify emoticon",
+  "add_tags": "Add tags",
+  "modify_tags": "Modify tags",
+
+
+  "emotipics": "Emotipics",
+  "@emotipics": { "description": "The Emotipics" },
+
+  "@@emotipicSelectionEditor": "emotipicsEditor",
+  "emotipicsEditor_links": "Select an image to modify its tags",
+  "emotipicsEditor_delete": "Select the images and tags you wish to delete",
+  "emotipicsEditor_reorder": "Drag the handle to reorder images or tags",
+  "emotipicsEditor_hide": "Select the images you wish to hide",
+
+
+  "search_emotipics": "Search by tag and note",
+
+  "empty_emotipics": "Nothing but the void O.o",
+
+  "copied_emotipic": "Image copied!",
+
+  "error_load_img": "Unable to load image",
+  "error_copy_img": "Unable to copy image",
+  "error_share_img": "Unable to share image",
+  "error_load_imgs": "Error loading images",
+
+  "@@emotipicSheetEditor": "Emotipic OverView & Editor Sheet",
+  "emotipic": "Emotipic",
+  "modify_emotipic": "Modify Emotipic",
+  "note": "Note",
+
+  "no_tags_found": "No tags found",
+
+
+  "fancy_text": "Fancy Text",
+  "@fancy_text": { "description": "The Fancy Text" },
+
+  "fancy_input_text": "Input text",
+  "input_text_hint": "Type something here",
+
+  "copied_text": "Copied text!",
+
+  "@@fancy_text_styles": "Styles Of Fancy Text",
+  "fancyText_Uppercase": "Uppercase",
+  "fancyText_Lowercase": "Lowercase",
+  "fancyText_Alternativecase": "Alternative case",
+  "fancyText_Strikethrough": "Strikethrough",
+  "fancyText_UpsideDown": "Upside down",
+  "fancyText_Cursed": "Cursed Text",
+  "fancyText_Superscript": "Superscript/Tiny text",
+  "fancyText_SmallCaps": "Small caps",
+  "fancyText_Monospace": "Monospace",
+  "fancyText_Vaporwave": "Full width/Vaporwave",
+  "fancyText_Cursive": "Cursive",
+  "fancyText_OutlinedCircle": "Outlined Circle",
+  "fancyText_FilledCircle": "Filled Circle",
+  "fancyText_Bold": "Bold",
+  "fancyText_BlackboardBold": "Blackboard bold",
+  "fancyText_Squared": "Squared",
+
+
+  "settings": "Settings",
+  "@settings": { "description": "The Settings" },
+
+  "error": "Error",
+
+  "manage_data": "Manage data",
+
+  "restore_all_emoticons": "Restore all emoticons",
+
+  "clear_all": "Clear all data",
+  "clear_all_confirm": "Are you sure you want to delete all data?",
+
+  "backup_restore": "Backup and Restore",
+
+  "import": "Import",
+  "import_warning": "Import warning",
+  "import_warning_content_a": "This allows importing .sqlite and",
+  "import_warning_content_b": " .tar.gz files. Only import .tar.gz",
+  "import_warning_content_c": " files from trusted sources.\n( ⚆ _ ⚆ )",
+
+  "export": "Export",
+  "export_options": "Export options",
+  "export_emoticons": "Export all Emoticons",
+  "export_emotipics": "Export all Emotipics",
+  "export_settings": "Export settings",
+
+  "theme_ui": "Theme & UI",
+
+  "theme_mode": "Theme mode",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark",
+  "black": "Black",
+
+  "emoticon_text_size": "Emoticon text size",
+  "emotipics_column_count": "Emotipics column count",
+  "fancy_text_size": "Fancy text size",
+  "default_owo": "Default",
+  "auto": "Auto",
+
+
+  "about": "About",
+  "@about": { "description": "The About" },
+
+  "copied_link": "Copied link",
+
+  "source_code": "Source Code",
+  "license": "License",
+  "version": "Version",
+  
+  "easter_egg": "Back at ya!"
+
 }

@@ -1,15 +1,17 @@
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 Future<List<String>?> readListOfStringFromUser(
   BuildContext context, {
   required String titleText,
   required String textLabel,
-  String textHint = "Type one per line",
-  String positiveButtonText = "Add",
+  String? textHint,
+  String? positiveButtonText,
 }) {
   return showAdaptiveDialog<List<String>?>(
     context: context,
     builder: (context) {
+    final l10n = AppLocalizations.of(context)!;
       String newTagsText = "";
       return SimpleDialog(
         title: Text(titleText),
@@ -21,7 +23,7 @@ Future<List<String>?> readListOfStringFromUser(
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               label: Text(textLabel),
-              hintText: textHint,
+              hintText: textHint ?? l10n.add_hint,
             ),
             onChanged: (value) {
               newTagsText = value;
@@ -39,7 +41,7 @@ Future<List<String>?> readListOfStringFromUser(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: const Text("Cancel"),
+                    child: Text(l10n.cancel),
                   ),
                   const SizedBox(
                     width: 10,
@@ -58,7 +60,7 @@ Future<List<String>?> readListOfStringFromUser(
                                 .toList(),
                       );
                     },
-                    child: Text(positiveButtonText),
+                    child: Text(positiveButtonText ?? l10n.add),
                   ),
                 ],
               );
@@ -71,19 +73,21 @@ Future<List<String>?> readListOfStringFromUser(
 }
 
 Future<List<String>?> readTags(BuildContext context) async {
+  final l10n = AppLocalizations.of(context)!;
   return readListOfStringFromUser(
     context,
-    titleText: "Add new tags",
-    textLabel: "Tags",
-    textHint: "Type one tag per line",
+    titleText: l10n.add_new_tags,
+    textLabel: l10n.tags,
+    textHint: l10n.add_tag_hint,
   );
 }
 
 Future<List<String>?> readEmoticons(BuildContext context) async {
+  final l10n = AppLocalizations.of(context)!;
   return readListOfStringFromUser(
     context,
-    titleText: "Add Emoticons",
-    textLabel: "Emoticons",
-    textHint: "One emoticon per line",
+    titleText: l10n.add_new_emoticons,
+    textLabel: l10n.emoticons,
+    textHint: l10n.add_multiple_hint,
   );
 }

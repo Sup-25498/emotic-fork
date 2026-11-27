@@ -3,6 +3,7 @@ import 'package:emotic/core/constants.dart';
 import 'package:emotic/core/logging.dart';
 import 'package:emotic/core/routes.dart';
 import 'package:emotic/core/settings.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -38,6 +39,7 @@ class AppUpdateProcessPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return BlocBuilder<GlobalSettingsCubit, GlobalSettingsState>(
       builder: (context, state) {
         WidgetsBinding.instance.addPostFrameCallback(
@@ -52,7 +54,7 @@ class AppUpdateProcessPage extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text("Updating stuff ● . ◉"),
+                Text(l10n.settingUp_updating),
               ],
             ),
           ),

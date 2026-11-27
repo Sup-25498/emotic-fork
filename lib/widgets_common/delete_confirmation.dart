@@ -1,3 +1,4 @@
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 Future<bool?> confirmDeletionDialog(
@@ -15,6 +16,7 @@ Future<bool?> confirmDeletionDialog(
             height: 20,
           ),
           Builder(builder: (context) {
+            final l10n = AppLocalizations.of(context)!;
             return Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -22,7 +24,7 @@ Future<bool?> confirmDeletionDialog(
                   onPressed: () {
                     Navigator.pop(context, false);
                   },
-                  child: const Text("No"),
+                  child: Text(l10n.no),
                 ),
                 const SizedBox(
                   width: 10,
@@ -34,7 +36,7 @@ Future<bool?> confirmDeletionDialog(
                       true,
                     );
                   },
-                  child: const Text("Yes"),
+                  child: Text(l10n.yes),
                 ),
               ],
             );
