@@ -5,6 +5,7 @@ import 'package:emotic/cubit/emoticons_listing_cubit.dart';
 import 'package:emotic/pages/emoticons_page_widgets/copyable_emoticon.dart';
 import 'package:emotic/widgets_common/search_bar.dart';
 import 'package:emotic/pages/emoticons_page_widgets/update_emoticon_bottom_sheet.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,6 +25,7 @@ class EmoticonsListingWrapped extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final emoticonListingViewId = "SingleChildScrollViewForEmoticons";
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -33,7 +35,7 @@ class EmoticonsListingWrapped extends StatelessWidget {
           GenericSearchBar(
             allTags: allTags,
             controller: controller,
-            hintText: "Search by tag",
+            hintText: l10n.search_emoticons,
             onChange: (String text) {
               context.read<EmoticonsListingCubit>().searchEmoticons(
                     searchTerm: text,
@@ -46,7 +48,7 @@ class EmoticonsListingWrapped extends StatelessWidget {
           Expanded(
             child: emoticonsToShow.isEmpty
                 ? Center(
-                    child: Text("Nothing O.o"),
+                    child: Text(l10n.empty_emoticons),
                   )
                 : SingleChildScrollView(
                     key: PageStorageKey(emoticonListingViewId),
