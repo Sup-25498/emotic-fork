@@ -139,7 +139,7 @@ class EmotipicsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.new_label),
                           title: Text("Add Tag(s)"),
                         ),
                         onTap: () async {
@@ -170,7 +170,7 @@ class EmotipicsAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 colCount = 3;
                             }
                             return ListTile(
-                              leading: BlankIconSpace(),
+                              leading: Icon(Icons.zoom_in),
                               title: IntrinsicWidth(
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
@@ -231,7 +231,7 @@ class EmotipicsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.local_offer),
                           title: Text("Edit Tag Link"),
                         ),
                         onTap: () async {
@@ -261,7 +261,7 @@ class EmotipicsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.drag_indicator),
                           title: Text("Reorder"),
                         ),
                         onTap: () async {
