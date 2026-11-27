@@ -126,7 +126,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.playlist_add),
                           title: const Text("Add Multiple"),
                         ),
                         onTap: () async {
@@ -164,7 +164,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.new_label),
                           title: const Text("Add Tag(s)"),
                         ),
                         onTap: () async {
@@ -201,7 +201,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 fontSize = 12;
                             }
                             return ListTile(
-                              leading: BlankIconSpace(),
+                              leading: Icon(Icons.zoom_in),
                               // title: const Text("Zoom"),
                               title: IntrinsicWidth(
                                 child: Row(
@@ -263,7 +263,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.local_offer),
                           title: const Text("Edit Tag Link"),
                         ),
                         onTap: () async {
@@ -291,7 +291,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ),
                       PopupMenuItem(
                         child: ListTile(
-                          leading: BlankIconSpace(),
+                          leading: Icon(Icons.drag_indicator),
                           title: const Text("Reorder"),
                         ),
                         onTap: () async {
