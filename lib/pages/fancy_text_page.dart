@@ -82,7 +82,7 @@ class _FancyTextPageState extends State<FancyTextPage> {
                                       fontSize = 12;
                                   }
                                   return ListTile(
-                                    leading: BlankIconSpace(),
+                                    leading: Icon(Icons.zoom_in),
                                     title: IntrinsicWidth(
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
