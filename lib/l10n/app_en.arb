@@ -109,7 +109,7 @@
   "fancy_text": "Fancy Text",
   "@fancy_text": { "description": "The Fancy Text" },
 
-  "Input_text": "Input text",
+  "fancy_Input_text": "Input text",
   "Input_text_hint": "Type something here",
 
   "copied_text": "Copied text!",
