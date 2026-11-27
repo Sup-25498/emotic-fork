@@ -10,6 +10,7 @@ import 'package:emotic/widgets_common/blank_icon_space.dart';
 import 'package:emotic/widgets_common/delete_confirmation.dart';
 import 'package:emotic/widgets_common/read_list_of_string_from_user.dart';
 import 'package:emotic/widgets_common/show_message.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,8 +24,9 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return AppBar(
-      title: const Text("Emoticons"),
+      title: Text(l10n.emoticons),
       leading: DrawerButton(
         onPressed: context.openRootScaffoldDrawer,
       ),
@@ -53,9 +55,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
               return IconButton(
                 onPressed: () async {
                   final choice = await confirmDeletionDialog(context,
-                      titleText: "Delete ${selectedEmoticons.length}"
-                          " emoticons and ${selectedTags.length}"
-                          " tags?");
+                      titleText: l10n.delete + ' ' + '${selectedEmoticons.length}' + l10n.emoticonSelectionDeleteConfirm_b1 + '${selectedTags.length}' + l10n.selectionDeleteConfirm_b2);
                   if (choice == true && context.mounted) {
                     await context
                         .read<EmoticonsDataEditorCubit>()
@@ -85,7 +85,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.add),
-                          title: const Text("Add Emoticon"),
+                          title: l10n.add_emoticon,
                         ),
                         onTap: () async {
                           if (state
@@ -127,7 +127,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.playlist_add),
-                          title: const Text("Add Multiple"),
+                          title: l10n.add_multiple,
                         ),
                         onTap: () async {
                           final emoticonsStringList =
@@ -155,8 +155,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                             if (context.mounted) {
                               showSnackBar(
                                 context,
-                                text: "Added ${emoticonsStringList.length}"
-                                    " emoticons",
+                                text: l10n.added + ' ' + '${emoticonsStringList.length}' + ' ' + l10n.emoticons1,
                               );
                             }
                           }
@@ -165,7 +164,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.new_label),
-                          title: const Text("Add Tag(s)"),
+                          title: l10n.add_tag,
                         ),
                         onTap: () async {
                           final tags = await readTags(context);
@@ -183,7 +182,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                             if (context.mounted) {
                               showSnackBar(
                                 context,
-                                text: "Added ${tags.length} tags",
+                                text: l10n.added + ' ' + '${tags.length}' + ' ' + l10n.tags1,
                               );
                             }
                           }
@@ -202,13 +201,13 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                             }
                             return ListTile(
                               leading: Icon(Icons.zoom_in),
-                              // title: const Text("Zoom"),
+                              // title: Text("Zoom") =-=-=-> l10n.zoom
                               title: IntrinsicWidth(
                                 child: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    Text("Zoom"),
+                                    Text(l10n.zoom),
                                     const Spacer(),
                                     ActionChip(
                                       onPressed: () async {
@@ -264,7 +263,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.local_offer),
-                          title: const Text("Edit Tag Link"),
+                          title: l10n.edit_tag_link,
                         ),
                         onTap: () async {
                           await context
@@ -278,7 +277,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.delete),
-                          title: const Text("Delete"),
+                          title: l10n.delete,
                         ),
                         onTap: () async {
                           await context
@@ -292,7 +291,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.drag_indicator),
-                          title: const Text("Reorder"),
+                          title: l10n.reorder,
                         ),
                         onTap: () async {
                           await context
