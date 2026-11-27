@@ -1,6 +1,7 @@
 import 'package:emotic/core/entities/emoticon.dart';
 import 'package:emotic/widgets_common/delete_confirmation.dart';
 import 'package:emotic/widgets_common/read_list_of_string_from_user.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 sealed class BottomSheetResult {
@@ -80,6 +81,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final screenHeight = MediaQuery.sizeOf(context).height;
     final isSmallScreen = screenHeight < 640;
     return BottomSheet(
@@ -97,9 +99,9 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
             children: [
               Text(
                 switch ((widget.isEditMode, readOnlyMode)) {
-                  (true, true) => "Emoticon",
-                  (true, false) => "Modify emoticon",
-                  (false, _) => "Add emoticon"
+                  (true, true) => l10n.emoticon,
+                  (true, false) => l10n.modify_emoticon,
+                  (false, _) => l10n.add_emoticon1,
                 },
               ),
               SizedBox(
@@ -110,7 +112,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                 controller: emoticonTextController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
-                  label: Text("Emoticon"),
+                  label: Text(l10n.emoticon),
                 ),
               ),
               SizedBox(
@@ -118,9 +120,9 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
               ),
               Text(
                 switch ((widget.isEditMode, readOnlyMode)) {
-                  (true, true) => "Tags",
-                  (true, false) => "Modify tags",
-                  (false, _) => "Add tags"
+                  (true, true) => l10n.tags,
+                  (true, false) => l10n.modify_tags,
+                  (false, _) => l10n.add_tags,
                 },
               ),
               const SizedBox(
@@ -179,7 +181,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                             });
                           },
                           icon: const Icon(Icons.edit),
-                          label: const Text("Edit"),
+                          label: Text(l10n.edit),
                         ),
                       ],
                     (true, false) => [
@@ -189,7 +191,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                           ),
                           onPressed: () async {
                             if (await confirmDeletionDialog(context,
-                                        titleText: "Delete emoticon?") ==
+                                        titleText: l10n.deleteEmoticon_confirm) ==
                                     true &&
                                 context.mounted) {
                               Navigator.pop<BottomSheetResult>(
@@ -213,7 +215,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: const Text("Cancel"),
+                          child: Text(l10n.cancel),
                         ),
                         const Flexible(
                           flex: 1,
@@ -244,7 +246,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                               ),
                             );
                           },
-                          child: const Text("Save"),
+                          child: Text(l10n.save),
                         )
                       ],
                     (false, _) => [
@@ -255,7 +257,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: const Text("Cancel"),
+                          child: Text(l10n.cancel),
                         ),
                         const Flexible(
                           flex: 1,
@@ -285,7 +287,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
                               ),
                             );
                           },
-                          child: const Text("Add"),
+                          child: Text(l10n.add),
                         )
                       ]
                   },
