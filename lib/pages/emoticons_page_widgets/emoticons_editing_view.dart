@@ -2,6 +2,7 @@ import 'package:emotic/cubit/emoticons_data_editor_cubit.dart';
 import 'package:emotic/cubit/emoticons_data_editor_state.dart';
 import 'package:emotic/pages/emoticons_page_widgets/emoticon_tile.dart';
 import 'package:emotic/widgets_common/tag_tile.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,6 +17,7 @@ class EmoticonsEditingView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -26,11 +28,11 @@ class EmoticonsEditingView extends StatelessWidget {
               child: Text(
                 switch (state) {
                   EmoticonsDataEditorModifyLinks() =>
-                    "Select an emoticon to modify its tags",
+                    l10n.emoticonsEditor_links,
                   EmoticonsDataEditorDeleteData() =>
-                    "Select the emoticons and tags you wish to delete",
+                    l10n.emoticonsEditor_delete,
                   EmoticonsDataEditorModifyOrder() =>
-                    "Drag the handle to reorder emoticons or tags",
+                    l10n.emoticonsEditor_reorder,
                 },
               ),
             ),
