@@ -1,5 +1,6 @@
 import 'package:emotic/core/entities/emoticon.dart';
 import 'package:emotic/widgets_common/show_message.dart';
+import 'package:emotic/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -23,13 +24,14 @@ class _CopyableEmoticonState extends State<CopyableEmoticon> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     return Card.outlined(
       clipBehavior: Clip.hardEdge,
       child: InkWell(
         onTap: () async {
           await Clipboard.setData(ClipboardData(text: widget.emoticon.text));
           if (context.mounted) {
-            showSnackBar(context, text: "Copied ${widget.emoticon.text}");
+            showSnackBar(context, text: l10n.copied_emoticon + '${widget.emoticon.text}');
           }
         },
         onLongPress: () {
