@@ -1,8 +1,8 @@
 {
 
- "settingUp_updating": "Updating stuff ● . ◉",
+  "settingUp_updating": "Updating stuff ● . ◉",
 
- "@@popup_menu": "PopUp Menu",  
+  "@@popup_menu": "PopUp Menu",  
   "add_emoticon": "Add Emoticon",
   "add_multiple": "Add Multiple",
   "add_tag": "Add Tag(s)",
@@ -109,8 +109,8 @@
   "fancy_text": "Fancy Text",
   "@fancy_text": { "description": "The Fancy Text" },
 
-  "fancy_Input_text": "Input text",
-  "Input_text_hint": "Type something here",
+  "fancy_input_text": "Input text",
+  "input_text_hint": "Type something here",
 
   "copied_text": "Copied text!",
 
@@ -150,7 +150,7 @@
   "import": "Import",
   "import_warning": "Import warning",
   "import_warning_content_a": "This allows importing .sqlite and",
-  "import_warning_content_b": " .tar.gz files.\nOnly import .tar.gz",
+  "import_warning_content_b": " .tar.gz files. Only import .tar.gz",
   "import_warning_content_c": " files from trusted sources.\n( ⚆ _ ⚆ )",
 
   "export": "Export",
