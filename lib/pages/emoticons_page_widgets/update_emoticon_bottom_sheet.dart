@@ -110,7 +110,7 @@ class _UpdateEmoticonBottomSheetState extends State<UpdateEmoticonBottomSheet>
               TextField(
                 readOnly: readOnlyMode && widget.isEditMode,
                 controller: emoticonTextController,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text(l10n.emoticon),
                 ),
