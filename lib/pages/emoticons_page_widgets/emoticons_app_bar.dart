@@ -85,7 +85,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.add),
-                          title: l10n.add_emoticon,
+                          title: Text(l10n.add_emoticon),
                         ),
                         onTap: () async {
                           if (state
@@ -127,7 +127,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.playlist_add),
-                          title: l10n.add_multiple,
+                          title: Text(l10n.add_multiple),
                         ),
                         onTap: () async {
                           final emoticonsStringList =
@@ -164,7 +164,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.new_label),
-                          title: l10n.add_tag,
+                          title: Text(l10n.add_tag),
                         ),
                         onTap: () async {
                           final tags = await readTags(context);
@@ -263,7 +263,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.local_offer),
-                          title: l10n.edit_tag_link,
+                          title: Text(l10n.edit_tag_link),
                         ),
                         onTap: () async {
                           await context
@@ -277,7 +277,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.delete),
-                          title: l10n.delete,
+                          title: Text(l10n.delete),
                         ),
                         onTap: () async {
                           await context
@@ -291,7 +291,7 @@ class EmoticonsAppBar extends StatelessWidget implements PreferredSizeWidget {
                       PopupMenuItem(
                         child: ListTile(
                           leading: Icon(Icons.drag_indicator),
-                          title: l10n.reorder,
+                          title: Text(l10n.reorder),
                         ),
                         onTap: () async {
                           await context
