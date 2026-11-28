@@ -1,0 +1,45 @@
+name: App Build Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.41.9"
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations/translations
+        run: flutter gen-l10n
+
+      - name: Analyzing
+        run: flutter analyze
+        continue-on-error: true
+
+      - name: Build APK
+        run: flutter build apk --profile --flavor=fdroid
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-testRelease-apk
+          path: build/app/outputs/flutter-apk/*.apk
